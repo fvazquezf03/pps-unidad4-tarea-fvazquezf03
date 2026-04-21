@@ -1,0 +1,6 @@
+site_name: Tarea Obligatoria Unidad 3. Detección y corrección de vulnerabilidades de aplicaciones web
+nav:
+  - Home: index.md
+  - Enunciado: EnunciadoTarea.md
+  - Creación del entorno de Pruebas: Actividad1.md
+docs_dir: ./docs

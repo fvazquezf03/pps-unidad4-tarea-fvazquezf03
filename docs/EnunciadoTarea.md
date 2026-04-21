@@ -1,13 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/3zsDx5oH)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=23664132&assignment_repo_type=AssignmentRepo)
 # Tarea obligatoria Unidad 4 - Tarea RA 4 Detección de problemas de seguridad en aplicaciones para dispositivos móviles
 
 **Lee la tarea hasta el final** para ver lo que tienes que entregar e ir cogiendo las evidencias y ver lo que tienes que documentar.
 
 Tienes información de cómo se realiza todo el proceso en las siguientes actividades:
-
-- [Actividad Unidad 4- Modificar APK con APKTool + Jadx + Zipalign + Keytool + Apksigner: InsecureBankv2 ](../Actividad-Modificar-APK/README.md)
-- [Análisis Estático y Dinámico de APK](../Actividad-Analisis-SAST-DAST-APK-MobSF-InsecureBankv2/README.md)
+- [Desensamblado: APKTool+JADX ](../Actividad-Desensamblado-APK/README.md)
+- [Análisis Estático y Dinámico de APK](../BorradorActividad-Analisis-SAST-DAST-APK-MobSF-InsecureBankv2/README.md)
 
 **Índice**
 
@@ -38,11 +35,6 @@ Tienes información de cómo se realiza todo el proceso en las siguientes activi
 
 - Conocer las técnicas de almacenamiento seguro de datos en los dispositivos, para evitar la fuga de información.
 
-- Saber cómo orregir y/o mitigar problemas de AndroidManifests en APK.
-
-- Conocer y saber realizar el proceso de descompresión de APK y también las fases necesarias para crear y firmar una APK. 
-
-
 ---
 # RESULTADOS DE APRENDIZAJE Y CRITERIOS DE EVALUACIÓN
 
@@ -53,31 +45,23 @@ Esta actividad se relaciona con el resultado de aprendizaje y criterios de evalu
 
 Utilizaremos **`GitHub Classroom`** para la entrega de esta actividad.
 
-- Usa este código de invitación para realizar esta tarea: https://classroom.github.com/a/3zsDx5oH
+- Usa el código de invitación que tienes en la plataforma moodle para esta tarea. 
 
 1. Pincha en el enlace y **acepta la asignación**.
 
 ![](./docs/images/tu3.png)
 
-2. Es posible que te aparezca un mensaje de problemas de acceso al repositorio:
+2. Es posible que para confirmar, recibas en el email vinculado a tu `Github` un correo con la asignación.
 
-![](./docs/images/tu1.png)
-
-3. Si es así es posible que recibas en el email vinculado a tu `Github`, un correo con la asignación.
-
-![](./docs/images/tu2.png)
-
-4. Pincha en el enlace que te ha llegado al correo, **acepta la asignación** y sigue los pasos que te indican.
-
-![](./docs/images/tu4.png)
-
-5.  Puedes acceder a la tarea desde el **enlace de `github` o** clonando el repositorio **desde `Visual Studio Code`**.
+3. **Acepta la asignación** y sigue los pasos que te indican.
 
 ![](./docs/images/tu31.png)
 
-6. Ya podrás **acceder al repositorio** con la tarea a realizar.
+> Puedes acceder a la tarea desde el **enlace de `github` o** clonando el repositorio **desde `Visual Studio Code`**.
 
-7. **Guarda la dirección ya que está tarea no aparecerá en tu repositorio** al ser un repositorio del classroom https://github.com/PPS-CETI-vjp/NombreTarea-TuUSUARIOGITHUB
+4. Ya podrás **acceder al repositorio** con la tarea a realizar.
+
+5. **Guarda la dirección ya que está tarea no aparecerá en tu repositorio** al ser un repositorio del classroom https://github.com/PPS-CETI-vjp/NombreTarea-TuUSUARIOGITHUB
 
 **Si le das a Acceder con Visual Studio Code**, tendrás que dar a permitir abrir, enlaces, descargar extensiones para vscode, confiar en los autores,etc. Se creará tu repositorio en `$HOME/Github-classroom/`.
 
@@ -92,14 +76,14 @@ Utilizaremos **`GitHub Classroom`** para la entrega de esta actividad.
 ---
 # DESARROLLO
 
-## Preparación del laboratorio
+## Preparción del laboratorio
 
 Herramientas y recursos necesarios:
 - Aplicación APK AndroGoat.
 - APKTool + Jadx: Desensamblador y extractor APK.
 - MbSF: Análisis Estático y dinámico.
 - Genymotion o emulador Android.
-- Dispositivo virtual Andoid (Genymotion).
+- Dispositivo virtual Andoid (Genymotion). 
 
 ## Obtener AndroGoat APK:
 
@@ -119,22 +103,21 @@ wget https://github.com/satishpatnayak/AndroGoat/releases/latest/download/AndroG
 3. Extrae el `AndroidManifest.xml` y el código de la apliación.
 4. Localiza los posibles problemas que pueda haber en el código fuente: Credenciales hardcodeadas, SharedPreferences inseguros, URLs backend expuestas, etc.
 
-## Apartado 2 - Análisis de AndroGoat.
+## Apartado 2 - Análisis estático de AndroGoat.
 
 1. Realiza el **Análisis estático** de la aplicación con `MobSF`.
-2.  Indica **cuál es la versión de Android mínima soportada por la aplicación `AndroGoat`**.
-3. Sube el informe del análisis estático a la [carpeta `files` del repositorio](./files/) .
-4. **Crea el laboratorio para la emulación** de un dispositivo virtual con **Android 8.1**.Realiza el **Análisis dinámico** de la aplicación (p.e con `Drozer` o con `MobSF`).
-5. Sube el informe del análisis dinámico a la [carpeta `files` del repositorio.](./files/).  
-6. Haz un **análisis de los resultados** .
+2. Sube el informe del análisis estático a la [carpeta `files` del repositorio](./files/) .
+3. Haz un **análisis de los resultados** .
 
-## Apartado 3 - Solución de problemas y reempaquetado de AndroGoat.
+## Apartado 3 - Análisis Dinámico de AndroGoat.
 
-1. Soluciona los problemas de la aplicación presentes en el `Manifest`.
-2. Reempaqueta, alinea y firma la aplicación. El nombre de la apk debe de ser **AndrogoatTuNombre.apk**.
-3. Sube la aplicación a la carpeta files del repositorio.
-3. Vuleve a hacer análisis estático que demuestre que se han solucionado los problemas.
+1. Indica **cuál es la versión de Android mínima soportada por la aplicación `AndroGoat`**.
+2. **Crea el laboratorio para la emulación** de un dispositivo virtual con **Android 8.1**.
+3. Realiza el **Análisis dinámico** de la aplicación (p.e con `Drozer` o con `MobSF`).
+4. Sube el informe del análisis dinámico a la [carpeta `files` del repositorio.](./files/).  
+5. Haz un **análisis de los resultados** .
  
+---
 # Entrega
 
 ## Indicaciones de entrega
@@ -178,9 +161,9 @@ La documentación generada en la rama `gh-pages` del repositorio (*recuerda que 
 
     - **Apartado 1: APKTool + JADX**.
 
-    - **Apartado 2 - Análisis estático y dinámico de AndroGoat**.
+    - **Apartado 2 - Análisis estático de AndroGoat**.
 
-    - **Apartado 3 - Solución de problemas y reempaquetado de AndroGoat**.
+    - **Apartado 3 - Análisis dinámico de AndroGoat**.
 
 El archivo comprimido se nombrará siguiendo las siguientes pautas:
 
@@ -203,11 +186,10 @@ Si **no se adjunta el repositorio comprimido o no se indica la dirección de la 
 > **Aquellos apartados/subapartados en los que las capturas de pantalla no sean claras o no tengan como fondo de pantalla la plataforma con tu usuario mostrando claramente la foto de tu perfil, no serán corregidos**.
 
 En el resto de los casos, la **puntuación** de los apartados es la siguiente:
-1. **Apartado 1 - APKTool + JADX**: (Extracción apktool y jadx: 1 punto. Anális de problemas presentes: 1 punto. Total hasta 2 puntos).
-1. **Apartado 2 - Análisis estático y dinámico de AndroGoat** (Ejecución Estático+informe: 1 punto, Dinámico + informe: 1 punto. Análisis: 2 puntos. Total hasta 4 puntos).
-1. **Apartado 3 - Solución de problemas y reempaquetado de AndroGoat**: ((Modificación de problemas: 1 punto, Empaquetado y firma de apk: 1 puntos. Total hasta 2 puntos)).
+1. **Apartado 1 - APKTool + JADX**: (hasta 2 puntos).
+1. **Apartado 2 - Análisis estático de AndroGoat** (Ejecución Estático+informe: 1 punto, Análisis: 2 puntos. Total hasta 3 puntos).
+1. **Apartado 3 - Análisis dinámico de AndroGoat**: ((Ejecución dinámico+informe: 1 punto, Análisis: 2 puntos. Total hasta 3 puntos)).
 1. **Documentación: presentación, extensión, exactitud, riqueza en síntaxis de MarkDown, etc.** de la documentación del repostorio. (hasta 2 puntos).
 
 --- 
 [![Licencia: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
